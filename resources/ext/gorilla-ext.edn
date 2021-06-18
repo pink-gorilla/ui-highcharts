@@ -1,0 +1,13 @@
+{:name "ui-highcharts"
+ :clj-require []
+ :cljs-namespace [pinkgorilla.highcharts.goldly]
+ :cljs-bindings {}
+ :cljs-ns-bindings {}
+ :snippets [{:type :goldly-clj
+             :category :highcharts
+             :id :highcharts
+             :filename "snippets/highcharts/highcharts.clj"}
+            {:type :goldly-clj
+             :category :highcharts
+             :id :highcharts-stock
+             :filename "snippets/highcharts/stock.clj"}]}
