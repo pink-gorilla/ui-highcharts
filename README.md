@@ -1,4 +1,4 @@
-# ui-highcharts [![GitHub Actions status |pink-gorilla/ui-highcharts](https://github.com/pink-gorilla/ui-input/workflows/CI/badge.svg)](https://github.com/pink-gorilla/ui-input/actions?workflow=CI)[![Clojars Project](https://img.shields.io/clojars/v/org.pinkgorilla/ui-input.svg)](https://clojars.org/org.pinkgorilla/ui-input)
+# ui-highcharts [![GitHub Actions status |pink-gorilla/ui-highcharts](https://github.com/pink-gorilla/ui-highcharts/workflows/CI/badge.svg)](https://github.com/pink-gorilla/ui-highcharts/actions?workflow=CI)[![Clojars Project](https://img.shields.io/clojars/v/org.pinkgorilla/ui-highcharts.svg)](https://clojars.org/org.pinkgorilla/ui-highcharts)
 
 [highcharts](https://www.highcharts.com)
 
@@ -26,7 +26,7 @@ In deps.edn add ui-highcharts as dependency and add goldly alias
                {org.pinkgorilla/ui-highcharts {:mvn/version "0.0.2"}}
    :exec-fn goldly-server.app/goldly-server-run!
    :exec-args {:profile "watch"
-               :config {:goldly {:extensions [[pinkgorilla.highcharts.goldly]
+               :config {:goldly {:extensions [
                                               ]}}}}
 ```
 
