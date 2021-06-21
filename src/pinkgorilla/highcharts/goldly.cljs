@@ -8,12 +8,16 @@
 
    ; helper fns
    [pinkgorilla.highcharts.css :as css]
-   [pinkgorilla.highcharts.core :refer [highchart-boxed highstock-boxed]]
+   [pinkgorilla.highcharts.core :refer [highchart highstock
+                                        highchart-boxed highstock-boxed]]
 
 ;   
    ))
 
 (rf/dispatch [:css/add-components css/components css/config])
 
-(register-component :p/highchart highchart-boxed)
-(register-component :p/highstock highstock-boxed)
+(register-component :p/highchart highchart)
+(register-component :p/highstock highstock)
+
+(register-component :p/highchartb highchart-boxed)
+(register-component :p/highstockb highstock-boxed)

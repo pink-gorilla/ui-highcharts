@@ -3,6 +3,17 @@
  :cljs-namespace [pinkgorilla.highcharts.goldly]
  :cljs-bindings {}
  :cljs-ns-bindings {}
+ ; css and pinkie not yet via loader
+ :css {:components  {:highcharts {true ["highcharts/css/highcharts.css"
+                                        "highcharts/css/stocktools/gui.css"
+                                        "highcharts/css/annotations/popup.css"]
+                                  "dark-unica" ["highcharts/css/themes/dark-unica.css"]
+                                  "grid-light" ["highcharts/css/themes/grid-light.css"]
+                                  "sand-signika" ["highcharts/css/themes/sand-signika.css"]}}
+       :config {:highcharts true}}
+ :pinkie {:p/highchart pinkgorilla.highcharts.core/highchart
+          :p/highstock pinkgorilla.highcharts.core/highstock}
+          
  :snippets [{:type :goldly-clj
              :category :highcharts
              :id :highcharts
