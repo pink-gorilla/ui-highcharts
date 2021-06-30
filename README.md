@@ -26,8 +26,7 @@ In deps.edn add ui-highcharts as dependency and add goldly alias
                {org.pinkgorilla/ui-highcharts {:mvn/version "0.0.2"}}
    :exec-fn goldly-server.app/goldly-server-run!
    :exec-args {:profile "watch"
-               :config {:goldly {:extensions [
-                                              ]}}}}
+               :config {:goldly {}}}}
 ```
 
 
