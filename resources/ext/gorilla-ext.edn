@@ -1,7 +1,8 @@
 {:name "ui-highcharts"
  :clj-require []
  :cljs-namespace [pinkgorilla.highcharts.goldly]
- :cljs-bindings {}
+ :cljs-bindings {'highchart pinkgorilla.highcharts.core/highchart
+                 'highstock pinkgorilla.highcharts.core/highstock}
  :cljs-ns-bindings {}
  :theme {:available  {:highcharts {true ["highcharts/css/highcharts.css"
                                          "highcharts/css/stocktools/gui.css"

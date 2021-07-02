@@ -52,4 +52,4 @@
    :state {}
    :html [:p/highchart highchart-spec]
    :fns {}}
-  {:fns {}}))
+  ))
