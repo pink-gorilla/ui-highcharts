@@ -5,9 +5,8 @@
   (:require
    [clojure.set :refer [rename-keys]]
    ;["highcharts" :as highcharts]
-   ["highcharts/highstock" :as highcharts]
-   [pinkie.jsrender :refer [render-js]]
-   [pinkgorilla.ui.box :refer [box]]))
+   ["highcharts/highstock" :as highcharts] ; this brings ighstock and highcarts
+   [pinkie.jsrender :refer [render-js]]))
 
 ;import Highcharts from 'highcharts/highstock
 
@@ -23,8 +22,8 @@
   highchart
   "reagent component to render highchart-spec via highcharts.js
    Usage:  [:p/highchart spec-as-clj-data]"
-  [data]
-  [render-js {:f render-highchart :data data}])
+  [spec]
+  [render-js (assoc spec :f render-highchart)])
 
 (defn render-highstock [dom-node data]
   (highcharts/stockChart. dom-node data); //.catch(console.warn);
@@ -34,38 +33,9 @@
   highstock
   "reagent component to render highchart-spec via highcharts.js
    Usage:  [:p/highchart spec-as-clj-data]"
-  [data]
-  [render-js {:f render-highstock :data data}])
+  [spec]
+  [render-js (assoc spec :f render-highstock)])
 
-(defn highchart-box [data box]
-  (let [s (-> (:style box)
-              (select-keys  [:width-px :height-px])
-              (rename-keys {:width-px :width
-                            :height-px :height}))
-        b (assoc data :chart s)
-        ;b (assoc data :chart  {:width 300 :height 300})
-        ]
-    ;(println "highchart boxed: " b)
-    b))
 
-(defn ^{:category :data}
-  highchart-boxed
-  "reagent component to render highchart-spec via highcharts.js
-   Usage:  [:p/highchart spec-as-clj-data]"
-  [data]
-  [box {:size :small
-        :render-fn highchart
-        :box-fn highchart-box
-        :data data}])
-
-(defn ^{:category :data}
-  highstock-boxed
-  "reagent component to render highchart-spec via highcharts.js
-   Usage:  [:p/highchart spec-as-clj-data]"
-  [data]
-  [box {:size :small
-        :render-fn highstock
-        :box-fn highchart-box
-        :data data}])
 
 

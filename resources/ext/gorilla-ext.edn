@@ -1,9 +1,5 @@
 {:name "ui-highcharts"
  :clj-require []
- :cljs-namespace [pinkgorilla.highcharts.goldly]
- :cljs-bindings {'highchart pinkgorilla.highcharts.core/highchart
-                 'highstock pinkgorilla.highcharts.core/highstock}
- :cljs-ns-bindings {}
  :theme {:available  {:highcharts {true ["highcharts/css/highcharts.css"
                                          "highcharts/css/stocktools/gui.css"
                                          "highcharts/css/annotations/popup.css"]
@@ -12,12 +8,15 @@
                                    "sand-signika" ["highcharts/css/themes/sand-signika.css"]}}
          :current {:highcharts true}}
 
- ; modules and pinkie not yet via loader
+ :cljs-namespace [pinkgorilla.highcharts.core]
  :pinkie {:p/highchart pinkgorilla.highcharts.core/highchart
           :p/highstock pinkgorilla.highcharts.core/highstock}
+ :cljs-bindings {'highchart pinkgorilla.highcharts.core/highchart
+                 'highstock pinkgorilla.highcharts.core/highstock}
+ :cljs-ns-bindings {}
+
+ ; modules  not yet via loader
  :modules {}
-
-
 
  :snippets [{:type :goldly-clj
              :category :highcharts

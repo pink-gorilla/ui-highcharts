@@ -78,11 +78,7 @@
               :yAxis 1,
               :dataGrouping grouping
             }
-        
-            
             ]}))
-
-
 
 (def ohlc-series
   [[1560864600000,49.01,50.07,48.8,49.61]
@@ -124,7 +120,6 @@
    [1562851800000,50.83]
    [1562938200000,50.61]])
 
-
 (def volume-series
   [[1560864600000,49.01]
    [1560951000000,49.92]
@@ -153,11 +148,9 @@
     :volume volume-series
     }))
 
-
 (system-start!
  (goldly/system
   {:id :highstock
    :state {}
-   :html [:p/highstock highchart-spec]
-   :fns {}}
-  {:fns {}}))
+   :html [:p/highstock {:data highchart-spec}]
+   :fns {}}))
