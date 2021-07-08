@@ -14,10 +14,7 @@
  :cljs-bindings {'highchart pinkgorilla.highcharts.core/highchart
                  'highstock pinkgorilla.highcharts.core/highstock}
  :cljs-ns-bindings {}
-
- ; modules  not yet via loader
- :modules {}
-
+ :lazy true
  :snippets [{:type :goldly-clj
              :category :highcharts
              :id :highcharts
