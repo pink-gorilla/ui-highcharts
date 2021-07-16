@@ -14,3 +14,5 @@ cpr () {
 }
 
 cpr "highcharts/gfx/stock-icons" "*.svg"
+cpr "highcharts/css" "*.css"
+cpr "highcharts/css/themes" "*.css"
