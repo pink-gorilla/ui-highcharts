@@ -10,24 +10,13 @@ https://api.highcharts.com/class-reference/Highcharts.Chart
 ## Demo
 
 ```
-clojure -X:goldly
+clojure -X:docs-run
 ```
 
-Navigate your webbrowser to port 8000. 
-Snippets are in `running systems` / `snippet-registry`
+Navigate your webbrowser to port 8080. 
 
-## In Goldly as a ui extension
 
-In deps.edn add ui-highcharts as dependency and add goldly alias
 
-```
-:goldly
-  {:extra-deps {org.pinkgorilla/goldly {:mvn/version "RELEASE"}
-               {org.pinkgorilla/ui-highcharts {:mvn/version "0.0.2"}}
-   :exec-fn goldly-server.app/goldly-server-run!
-   :exec-args {:profile "watch"
-               :config {:goldly {}}}}
-```
 
 
 

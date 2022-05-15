@@ -1,5 +1,3 @@
-(require '[goldly.system :as goldly])
-(require '[goldly.runner :refer [system-start!]])
 
 ; :subtitle {:text (:subtitle data)}
 ;:yAxis {;:min 0
@@ -18,67 +16,61 @@
 (defn make-chart-config [{:keys [title ohlc close volume]}]
   (let [grouping {:units [["week" [1]] ; // unit name - allowed multiples
                           ["month" [1, 2, 3, 4, 6]]]}]
-  {;:chart {;:type "line"
+    {;:chart {;:type "line"
    ;        :animation false}
-   :title {:text title}
+     :title {:text title}
    ;:xAxis {:categories (:labels data)}
    ;:tooltip {:valueSuffix " %"}
-   :rangeSelector {;:selected 1   ; time selector on the top
-                   :verticalAlign "top"
-                   :x 0
-                   :y 0}
-   :plotOptions {:series {:animation 0
+     :rangeSelector {;:selected 1   ; time selector on the top
+                     :verticalAlign "top"
+                     :x 0
+                     :y 0}
+     :plotOptions {:series {:animation 0
                           ;:label {;:pointStart 2010
                           ;        :connectorAllowed false}
-                          }}
+                            }}
 
-   :credits {:enabled false}
+     :credits {:enabled false}
 
-    :yAxis [{:labels {:align "right" :x -3}
-            :title { :text "OHLC"}
-            :height "60%"
-            :lineWidth 2
+     :yAxis [{:labels {:align "right" :x -3}
+              :title {:text "OHLC"}
+              :height "60%"
+              :lineWidth 2
             ;resize: {
             ;    enabled: true
             ;}
-        } {:labels {:align "right" :x -3}
-            :title {:text "Volume"},
-            :top "65%",
-            :height "35%",
-            :offset 0,
-            :lineWidth 2
-        }]
+              }{:labels {:align "right" :x -3}
+                :title {:text "Volume"},
+                :top "65%",
+                :height "35%",
+                :offset 0,
+                :lineWidth 2}]
 
-
-   :series [{:type "candlestick" ; :type "ohlc"
-             :name "priceseries"
-             :data ohlc
-             :dataGrouping grouping
-             :id "27"
-             }
-            {:type         "line"
-             :name         "close"
-             :linkedTo     "priceseries"
-             :data         close
+     :series [{:type "candlestick" ; :type "ohlc"
+               :name "priceseries"
+               :data ohlc
+               :dataGrouping grouping
+               :id "27"}
+              {:type         "line"
+               :name         "close"
+               :linkedTo     "priceseries"
+               :data         close
              ;:yAxis        1
-             :dataGrouping grouping}
+               :dataGrouping grouping}
 
-            {:type "flags"
-             :data [{:x 1561469400000     ; // Point where the flag appears
-                     :title "O" ;, // Title of flag displayed on the chart 
-                     :text  "open trade" ;  // Text displayed when the flag are highlighted.
-                     }]
-             :onSeries  "27" ;  // Id of which series it should be placed on. If not defined  the flag series will be put on the X axis
-             :shape "flag"  ;// Defines the shape of the flags.
-             :dataGrouping grouping
-             }
-             {:type "column"
-              :name "Volume"
-              :data volume,
-              :yAxis 1,
-              :dataGrouping grouping
-            }
-            ]}))
+              {:type "flags"
+               :data [{:x 1561469400000     ; // Point where the flag appears
+                       :title "O" ;, // Title of flag displayed on the chart 
+                       :text  "open trade" ;  // Text displayed when the flag are highlighted.
+                       }]
+               :onSeries  "27" ;  // Id of which series it should be placed on. If not defined  the flag series will be put on the X axis
+               :shape "flag"  ;// Defines the shape of the flags.
+               :dataGrouping grouping}
+              {:type "column"
+               :name "Volume"
+               :data volume,
+               :yAxis 1,
+               :dataGrouping grouping}]}))
 
 (def ohlc-series
   [[1560864600000,49.01,50.07,48.8,49.61]
@@ -140,17 +132,13 @@
    [1562851800000,50.83]
    [1562938200000,50.61]])
 
-(goldly/def-ui highchart-spec
+(def highchart-spec
   (make-chart-config
    {:title "stockchart"
     :ohlc ohlc-series
     :close close-series
-    :volume volume-series
-    }))
+    :volume volume-series}))
 
-(system-start!
- (goldly/system
-  {:id :highstock
-   :state {}
-   :html [:p/highstock {:data highchart-spec}]
-   :fns {}}))
+^:R
+['user/highstock {:data highchart-spec}]
+
