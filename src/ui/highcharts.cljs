@@ -1,4 +1,4 @@
-(ns pinkgorilla.highcharts.core
+(ns ui.highcharts
   "Highchart renderer is a pure javascript renderer, the conversion
    of the spec as clj-data to javascript is done in the render-js component
    "

@@ -1,10 +1,9 @@
 {:name "ui-highcharts"
  ;build 
  :lazy true
- :cljs-namespace [pinkgorilla.highcharts.core]
- :cljs-bindings {'highchart pinkgorilla.highcharts.core/highchart
-                 'highstock pinkgorilla.highcharts.core/highstock}
- :cljs-ns-bindings {}
+ :cljs-namespace [ui.highcharts]
+ :cljs-ns-bindings {'ui.highcharts {'highchart ui.highcharts.core/highchart
+                                    'highstock ui.highcharts.core/highstock}}
  ; theme
  :theme {:available  {:highcharts {true ["highcharts/css/highcharts.css"
                                          "highcharts/css/stocktools/gui.css"
@@ -12,6 +11,4 @@
                                    "dark-unica" ["highcharts/css/themes/dark-unica.css"]
                                    "grid-light" ["highcharts/css/themes/grid-light.css"]
                                    "sand-signika" ["highcharts/css/themes/sand-signika.css"]}}
-         :current {:highcharts true}}
- ;run
- :clj-require []}
+         :current {:highcharts true}}}

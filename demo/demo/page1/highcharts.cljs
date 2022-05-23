@@ -1,3 +1,9 @@
+(ns demo.page1.highcharts
+  (:require
+   [re-frame.core :as rf]
+   [ui.highcharts :refer [highchart]]
+   [goldly.page :as page]))
+
 ; this is our helper function to assemble a highchart object. it contains
 ; default values that we will use for multiple charts
 (defn make-chart-config [data]
@@ -75,4 +81,4 @@
     [:p "fl full (100%)"]
     [highchart {:data highchart-spec :box :fl}]]])
 
-(add-page highchart-page :user/highcharts)
+(page/add highchart-page :user/highcharts)

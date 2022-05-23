@@ -1,3 +1,5 @@
+(ns demo.notebook.highcharts)
+
 ; this is our helper function to assemble a highchart object. it contains
 ; default values that we will use for multiple charts
 (defn make-chart-config [data]
@@ -39,5 +41,5 @@
      {:name "Sales & Distribution" :data [117 172 165 191 285 247 321 393]}]}))
 
 ^:R
-['user/highchart {:data highchart-spec}]
+['ui.highcharts/highchart {:data highchart-spec}]
 

@@ -1,17 +1,4 @@
-
-; :subtitle {:text (:subtitle data)}
-;:yAxis {;:min 0
-;        :title {:text ""
-;                :align "high"}}
-;               ;:labels {:overflow "justify"}
- ;  :legend  {;:x -40
- ;     ;:y 100
- ;     ;:floating true
- ;     ;:borderWidth 1
- ;     ;:shadow true
- ;            :layout "vertical"
- ;            :align "right"
- ;            :verticalAlign "top"}
+(ns demo.notebook.highstock)
 
 (defn make-chart-config [{:keys [title ohlc close volume]}]
   (let [grouping {:units [["week" [1]] ; // unit name - allowed multiples
@@ -140,5 +127,19 @@
     :volume volume-series}))
 
 ^:R
-['user/highstock {:data highchart-spec}]
+['ui.highcharts/highstock {:data highchart-spec}]
+
+; :subtitle {:text (:subtitle data)}
+;:yAxis {;:min 0
+;        :title {:text ""
+;                :align "high"}}
+;               ;:labels {:overflow "justify"}
+ ;  :legend  {;:x -40
+ ;     ;:y 100
+ ;     ;:floating true
+ ;     ;:borderWidth 1
+ ;     ;:shadow true
+ ;            :layout "vertical"
+ ;            :align "right"
+ ;            :verticalAlign "top"}
 
