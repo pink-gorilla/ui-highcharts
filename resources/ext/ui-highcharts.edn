@@ -1,6 +1,6 @@
 {:name "ui-highcharts"
  ;build 
- :lazy true
+ :lazy-sci true
  :cljs-namespace [ui.highcharts]
  :cljs-ns-bindings {'ui.highcharts {'highchart ui.highcharts/highchart
                                     'highstock ui.highcharts/highstock}}
