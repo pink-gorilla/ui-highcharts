@@ -10,6 +10,9 @@ https://api.highcharts.com/class-reference/Highcharts.Chart
 ## Demo
 
 ```
+; to get css files to switch theme
+clj -X:docs-build:npm-install
+; run web app
 clojure -X:docs-run
 ```
 

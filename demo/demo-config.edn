@@ -1,3 +1,5 @@
 {:goldly {:lazy true
           :autoload-cljs-dir ["demo/page1"]
-          :routes {:app {"" :user/highcharts}}}}
+          :routes {:app {"" :user/highcharts
+                         "full" :user/highcharts-full
+                         }}}}

@@ -8,12 +8,6 @@
    ["highcharts/highstock" :as highcharts] ; this brings ighstock and highcarts
    [pinkie.jsrender :refer [render-js]]))
 
-;import Highcharts from 'highcharts/highstock
-
-;<script src= "https://code.highcharts.com/stock/highstock.js" ></script>
-
-;(println "highcharts: " highcharts)
-
 (defn render-highchart [dom-node data]
   (highcharts/Chart. dom-node data); //.catch(console.warn);
   )
@@ -21,7 +15,7 @@
 (defn ^{:category :data}
   highchart
   "reagent component to render highchart-spec via highcharts.js
-   Usage:  [:p/highchart spec-as-clj-data]"
+   Usage:  [ui.highcharts/highchart spec-as-clj-data]"
   [spec]
   [render-js (assoc spec :f render-highchart)])
 
@@ -32,7 +26,7 @@
 (defn ^{:category :data}
   highstock
   "reagent component to render highchart-spec via highcharts.js
-   Usage:  [:p/highchart spec-as-clj-data]"
+   Usage:  [ui.highcharts/highchart spec-as-clj-data]"
   [spec]
   [render-js (assoc spec :f render-highstock)])
 

@@ -4,7 +4,7 @@
          ]
  :deps
  {org.clojure/clojure    {:mvn/version "1.10.3"}
-  org.pinkgorilla/pinkie {:mvn/version "0.3.5"} ; js-render
+  org.pinkgorilla/pinkie {:mvn/version "0.3.17"} ; js-render
   }
  :aliases
  {;https://github.com/applied-science/deps-library
@@ -41,7 +41,7 @@
   ; demo ui
   
   :goldly
-  {:extra-deps {org.pinkgorilla/goldly {:mvn/version "0.4.519"
+  {:extra-deps {org.pinkgorilla/goldly {:mvn/version "0.4.605"
                                         :exclusions [org.pinkgorilla/ui-highcharts]}}
    :jvm-opts ["-Dmaven.wagon.rto=90000"]
    :exec-fn goldly.app.build/goldly-build
@@ -51,9 +51,11 @@
 
 ; RUN SERVICES (keep running)
   :docs-run
-  {:extra-deps {org.pinkgorilla/goldly-docs {:mvn/version "0.4.519"
+  {:extra-deps {org.pinkgorilla/goldly-docs {:mvn/version "0.4.605"
                                              :exclusions [org.pinkgorilla/ui-highcharts]}}
-   :extra-paths ["demo"]
+   :extra-paths ["demo" 
+                 "node_modules" ; so we have css files available
+                 ]
    :jvm-opts ["-Dmaven.wagon.rto=90000"]
    :exec-fn modular.system/start!
    :exec-args {:profile "jetty"
@@ -64,14 +66,15 @@
 
   ; BUILD BUNDLE (then exit)
   :docs-build
-  {:extra-deps {org.pinkgorilla/goldly-docs {:mvn/version "0.4.519"
+  {:extra-deps {org.pinkgorilla/goldly-docs {:mvn/version "0.4.605"
                                              :exclusions [org.pinkgorilla/ui-highcharts]}}
    :jvm-opts ["-Dmaven.wagon.rto=90000"]
    :exec-fn goldly.app.build/goldly-build
    :exec-args {:profile "compile2"
                :config ["webly/config.edn" "goldly/config.edn" "goldly/docs-config.edn"]}}
 
-
+   :npm-install 
+   {:exec-args  {:profile "npm-install"}}
 
 ;
   }}
