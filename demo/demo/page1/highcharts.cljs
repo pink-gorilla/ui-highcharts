@@ -1,14 +1,16 @@
 (ns demo.page1.highcharts
   (:require
-   [ui.highcharts :refer [highchart]]
+   [ui.highcharts :refer [highchart add-annotations add-boost add-debugger]]
    [goldly.page :as page]
    [demo.spec :refer [highchart-spec]]
+   [demo.spec-annotations :as annotations]
    [demo.link :refer [link-href link-dispatch]]
    ))
 
-
-
 (defn highchart-page  [{:keys [route-params query-params handler] :as route}]
+  ;(add-annotations)
+  ;(add-boost)
+  ;(add-debugger)
   [:div
    ;[:div.text-green-300 "grid1"]
 
@@ -29,6 +31,9 @@
 
     [:p "lg large"]
     [highchart {:data highchart-spec :box :lg}]
+
+    [:p "annotations"]
+    [highchart {:data annotations/spec :box :lg}]
 
     [link-href "/full" "highchart full (100%)"]
     ]])

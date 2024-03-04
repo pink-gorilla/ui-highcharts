@@ -75,6 +75,14 @@
 
    :npm-install 
    {:exec-args  {:profile "npm-install"}}
+  
+  :docs-build-adv
+  {:extra-deps {org.pinkgorilla/goldly-docs {:mvn/version "0.4.605"
+                                             :exclusions [org.pinkgorilla/ui-highcharts]}}
+   :jvm-opts ["-Dmaven.wagon.rto=90000"]
+   :exec-fn goldly.app.build/goldly-build
+   :exec-args {:profile "release-adv"
+               :config ["webly/config.edn" "goldly/config.edn" "goldly/docs-config.edn"]}}
 
 ;
   }}

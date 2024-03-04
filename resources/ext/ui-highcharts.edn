@@ -3,11 +3,15 @@
  :lazy-sci true
  :cljs-namespace [ui.highcharts]
  :cljs-ns-bindings {'ui.highcharts {'highchart ui.highcharts/highchart
-                                    'highstock ui.highcharts/highstock}}
+                                    'highstock ui.highcharts/highstock
+                                    'add-annotations ui.highcharts/add-annotations
+                                    'add-boost ui.highcharts/add-boost
+                                    'add-debugger ui.highcharts/add-debugger
+                                    }}
  ; theme
  :theme {:available  {:highcharts {true ["highcharts/css/highcharts.css"
-                                         "highcharts/css/stocktools/gui.css"
-                                         "highcharts/css/annotations/popup.css"]
+                                         "highcharts/css/annotations/popup.css"
+                                         "highcharts/css/stocktools/gui.css"]
                                    "dark-unica" ["highcharts/css/themes/dark-unica.css"]
                                    "grid-light" ["highcharts/css/themes/grid-light.css"]
                                    "sand-signika" ["highcharts/css/themes/sand-signika.css"]}}
