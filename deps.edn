@@ -35,10 +35,6 @@
                                  :sha "0ca84df1357d71429243b99908303f45a934654c"}}
    :main-opts ["-m" "clj-check.check"]}
 
-  :garamond
-  {:main-opts ["-m" "garamond.main"]
-   :extra-deps {com.workframe/garamond {:mvn/version "0.4.0"}}}
-
   ; demo ui
   
   :goldly
