@@ -7,12 +7,19 @@
            :animation false}
    :title {:text (:title data)}
    :subtitle {:text (:subtitle data)}
+   :backgroundColor "blue"
    :yAxis {:min 0
            :title {:text ""
                    :align "high"}}
                ;:labels {:overflow "justify"}
 
-   :xAxis {:categories (:labels data)}
+   :xAxis {:categories (:labels data)
+           :plotBands [{:color "rgba(255,75,66,0.07)"
+                        :from 4
+                        :to 5
+                        :label {:text "forecast"}
+                        :zIndex 1000}]}
+
    :tooltip {:valueSuffix " %"}
    :plotOptions {:series
                  {:animation 0
