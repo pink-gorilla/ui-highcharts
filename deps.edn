@@ -7,10 +7,11 @@
   org.pinkgorilla/pinkie {:mvn/version "0.3.17"} ; js-render
   }
  :aliases
- {;https://github.com/applied-science/deps-library
-  :release
-  {:extra-deps {applied-science/deps-library {:mvn/version "0.4.0"}}
-   :main-opts ["-m" "applied-science.deps-library"]}
+ {; github ci  
+  :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
+                 slipset/deps-deploy {:mvn/version "0.2.1"}
+                 babashka/fs {:mvn/version "0.0.5"}}
+          :ns-default build}
 
   ; https://github.com/weavejester/cljfmt
   :cljfmt
