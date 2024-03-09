@@ -5,6 +5,7 @@
   (:require
    ;["highcharts" :as highcharts] ; highstock includes highcharts
    ["highcharts/highstock" :as highcharts] ; this brings highstock and highcharts
+   ["highcharts/highcharts-more" :as more]
    ["highcharts/modules/annotations" :as annotations] ; annotation module
    ["highcharts/modules/boost" :as boost]
    ["highcharts/modules/debugger" :as debugger]
@@ -40,6 +41,10 @@
   (println "adding highcharts debugger feature..")
   (debugger highcharts))
 
+(defn add-more []
+  (println "adding highcharts more feature..")
+  (more highcharts))
+
 (defonce loaded? (atom false))
 
 (defn ensure-extensions-loaded []
@@ -47,7 +52,8 @@
     (reset! loaded? true)
     (add-debugger)
     (add-boost)
-    (add-annotations)))
+    (add-annotations)
+    (add-more)))
 
 (defn render-highchart [dom-node data]
   (ensure-extensions-loaded)
