@@ -1,7 +1,6 @@
 (ns ui.highcharts
   "Highchart renderer is a pure javascript renderer, the conversion
-   of the spec as clj-data to javascript is done in the render-js component
-   "
+   of the spec as clj-data to javascript is done in the render-js component"
   (:require
    ;["highcharts" :as highcharts] ; highstock includes highcharts
    ["highcharts/highstock" :as highcharts] ; this brings highstock and highcharts
@@ -68,6 +67,7 @@
   [render-js (assoc spec :f render-highchart)])
 
 (defn render-highstock [dom-node data]
+  (ensure-extensions-loaded)
   (highcharts/stockChart. dom-node data); //.catch(console.warn);
   )
 

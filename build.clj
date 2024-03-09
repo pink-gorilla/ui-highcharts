@@ -40,7 +40,9 @@
 
 (defn jar [_]
   (b/write-pom opts)
-  (b/copy-dir {:src-dirs ["src" "resources"]
+  (b/copy-dir {:src-dirs ["src"
+                          "resources"
+                          "target/node_modules"]
                :target-dir class-dir})
   (spit-version)
   (b/jar {:class-dir class-dir
