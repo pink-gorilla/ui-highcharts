@@ -19,6 +19,13 @@
 
      :credits {:enabled false}
 
+      :chart {;:height 1000 ; gets overwritten by set-chart-height
+                ; zoom/pan
+             :panKey "ctrl" ; "alt"" "shift"  "meta"
+             :panning true
+                ;:zoomType "xy"
+             :zoomType "x"}
+
      :yAxis [{:labels {:align "right" :x -3}
               :title {:text "OHLC"}
               :height "60%"

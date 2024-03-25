@@ -4,7 +4,13 @@
 ; default values that we will use for multiple charts
 (defn make-chart-config [data]
   {:chart {:type "line"
-           :animation false}
+           :animation false
+           ; zoom/pan
+           :panKey "ctrl" ; "alt"" "shift"  "meta"
+           :panning true
+           ;:zoomType "xy"
+           :zoomType "x"
+           }
    :title {:text (:title data)}
    :subtitle {:text (:subtitle data)}
    :backgroundColor "blue"

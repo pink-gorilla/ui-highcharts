@@ -8,17 +8,23 @@
    ["highcharts/modules/annotations" :as annotations] ; annotation module
    ["highcharts/modules/boost" :as boost]
    ["highcharts/modules/debugger" :as debugger]
+   ["highcharts/modules/draggable-points" :as draggable-points]
+   ["highcharts/modules/drag-panes" :as drag-panes]
    [pinkie.jsrender :refer [render-js]]))
 
+
 ;; highcharts modules:
-; accessibility full-screen no-data-to-display         
-; arrow-symbols drag-panes stock stock-tools
-; annotations annotations-advanced
-; boost boost-canvas data
-; export-data exporting debugger
+
+; boost-canvas data
+; full-screen no-data-to-display         
+; annotations-advanced
+
+; accessibility 
+; arrow-symbols  stock stock-tools
+; export-data exporting 
 ; dependency-wheel heikinashi parallel-coordinates      
 ; sunburst dotplot histogram-bellcurve pareto tilemap
-; draggable-points hollowcandlestick pathfinder timeline
+; hollowcandlestick pathfinder timeline
 ; item-series pattern-fill treegrid drilldown lollipop                   
 ; price-indicator treemap dumbbell map pyramid3d variable-pie
 ; broken-axis marker-clusters sankey variwide bullet streamgraph
@@ -44,6 +50,17 @@
   (println "adding highcharts more feature..")
   (more highcharts))
 
+(defn add-draggable-points []
+  (println "adding highcharts draggable-points feature..")
+  (draggable-points highcharts))
+
+(defn add-drag-panes []
+  (println "adding highcharts drag-panes feature..")
+  (drag-panes highcharts))
+
+
+
+
 (defonce loaded? (atom false))
 
 (defn ensure-extensions-loaded []
@@ -52,7 +69,10 @@
     (add-debugger)
     (add-boost)
     (add-annotations)
-    (add-more)))
+    (add-more)
+    (add-draggable-points)
+    (add-drag-panes)
+    ))
 
 (defn render-highchart [dom-node data]
   (ensure-extensions-loaded)

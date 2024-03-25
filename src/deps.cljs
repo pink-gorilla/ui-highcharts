@@ -3,7 +3,8 @@
   ; based on this dependencies 
 
    ; highcharts
-  "highcharts" "^9.0.1"
+  ;"highcharts" "^9.0.1"
+  "highcharts" "^11.4.0"
 
  ;
   }}
