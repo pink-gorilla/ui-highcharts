@@ -19,7 +19,7 @@
 
      :credits {:enabled false}
 
-      :chart {;:height 1000 ; gets overwritten by set-chart-height
+     :chart {;:height 1000 ; gets overwritten by set-chart-height
                 ; zoom/pan
              :panKey "ctrl" ; "alt"" "shift"  "meta"
              :panning true

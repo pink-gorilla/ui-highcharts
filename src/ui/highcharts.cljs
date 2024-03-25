@@ -12,7 +12,6 @@
    ["highcharts/modules/drag-panes" :as drag-panes]
    [pinkie.jsrender :refer [render-js]]))
 
-
 ;; highcharts modules:
 
 ; boost-canvas data
@@ -58,9 +57,6 @@
   (println "adding highcharts drag-panes feature..")
   (drag-panes highcharts))
 
-
-
-
 (defonce loaded? (atom false))
 
 (defn ensure-extensions-loaded []
@@ -71,8 +67,7 @@
     (add-annotations)
     (add-more)
     (add-draggable-points)
-    (add-drag-panes)
-    ))
+    (add-drag-panes)))
 
 (defn render-highchart [dom-node data]
   (ensure-extensions-loaded)
