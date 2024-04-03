@@ -1,6 +1,6 @@
 {:name "ui-highcharts"
  ;build 
- :lazy-sci true
+ :lazy true
  :cljs-namespace [ui.highcharts]
  :cljs-ns-bindings {'ui.highcharts {'highchart ui.highcharts/highchart
                                     'highstock ui.highcharts/highstock
@@ -8,7 +8,7 @@
                                     'add-boost ui.highcharts/add-boost
                                     'add-debugger ui.highcharts/add-debugger
                                     }}
- ; theme
+ ; run
  :theme {:available  {:highcharts {true ["highcharts/css/highcharts.css"
                                          "highcharts/css/annotations/popup.css"
                                          "highcharts/css/stocktools/gui.css"]
