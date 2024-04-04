@@ -10,7 +10,7 @@
    ["highcharts/modules/debugger" :as debugger]
    ["highcharts/modules/draggable-points" :as draggable-points]
    ["highcharts/modules/drag-panes" :as drag-panes]
-   [pinkie.jsrender :refer [render-js]]))
+   [pinkie.ui.core :refer [render-js]]))
 
 ;; highcharts modules:
 
