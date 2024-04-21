@@ -4,7 +4,7 @@
          ]
  :deps
  {org.clojure/clojure    {:mvn/version "1.10.3"}
-  org.pinkgorilla/pinkie {:mvn/version "0.5.231"}; js-render
+  org.pinkgorilla/pinkie {:mvn/version "0.5.232"}; js-render
   }
  :aliases
  {; github ci  
@@ -25,10 +25,6 @@
   :lint
   {:extra-deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}}
    :main-opts ["-m" "clj-kondo.main" "--lint" "src"]}
-
-  :outdated
-  {:extra-deps {com.github.liquidz/antq {:mvn/version "RELEASE"}}
-   :main-opts ["-m" "antq.core"]}
 
   :check
   {:extra-deps {athos/clj-check {:git/url "https://github.com/athos/clj-check.git"
